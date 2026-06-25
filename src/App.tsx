@@ -1,10 +1,8 @@
-import Test from "./Test"
+import { RouterProvider } from "react-router";
+import { router } from "./router/routes";
 
 function App() {
-
-  return (
-    <Test/>
-  )
+  return <RouterProvider router={router}/>;
 }
 
-export default App
+export default App;
