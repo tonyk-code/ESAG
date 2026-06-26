@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform, MotionValue } from "motion/react";
 import { ArrowRight } from "lucide-react";
 
 interface ServiceItem {
@@ -10,28 +10,106 @@ interface ServiceItem {
   img: string;
 }
 
-function ParallaxImage({ src, alt }: { src: string; alt: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
+/* ============================================================
+   SUB-COMPONENT 1: Pinned Tracking Tab (Left Column)
+   ============================================================ */
+/* ============================================================
+   SUB-COMPONENT 1: Pinned Tracking Tab (Left Column)
+   ============================================================ */
+function TrackingTab({ 
+  title, 
+  idx, 
+  total, 
+  progress 
+}: { 
+  title: string; 
+  idx: number; 
+  total: number; 
+  progress: MotionValue<number>; 
+}) {
+  const step = 1 / total;
+  const startRange = idx * step;
+  const endRange = (idx + 1) * step;
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
+  // FIXED: Wrapped calculation thresholds in Math constraints to guarantee native boundaries
+  const tabOpacity = useTransform(
+    progress,
+    [
+      Math.max(0, startRange - 0.05), 
+      startRange, 
+      endRange, 
+      Math.min(1, endRange + 0.05)
+    ],
+    [0.3, 1, 1, 0.3]
+  );
 
   return (
-    <div ref={ref} className="w-full h-full relative overflow-hidden">
-      <motion.img
-        style={{ scale }}
-        src={src}
-        alt={alt}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-    </div>
+    <motion.div
+      style={{ opacity: tabOpacity }}
+      className="p-4 rounded-xl border border-border bg-surface/40 backdrop-blur-xs font-display font-semibold text-lg text-primary"
+    >
+      {title}
+    </motion.div>
   );
 }
 
+/* ============================================================
+   SUB-COMPONENT 2: Scrolling Service Card (Right Column)
+   ============================================================ */
+function ServiceCard({ service }: { service: ServiceItem }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  
+  // Cleanly tracking individual element viewport status away from loop callbacks
+  const { scrollYProgress: cardProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "center center"]
+  });
+
+  const opacity = useTransform(cardProgress, [0, 0.7], [0, 1]);
+  const x = useTransform(cardProgress, [0, 0.7], [25, 0]);
+
+  return (
+    <motion.div
+      ref={cardRef}
+      style={{ opacity, x }}
+      className="w-full flex flex-col p-6 md:p-8 rounded-2xl border border-border bg-surface shadow-card relative overflow-hidden group"
+    >
+      <div className="flex items-center space-x-3 mb-6">
+        <h3 className="text-2xl md:text-3xl font-display font-bold text-primary">
+          {service.title}
+        </h3>
+      </div>
+
+      <div className="w-full aspect-4/3 rounded-xl overflow-hidden border border-border bg-canvas relative mb-6">
+        <img
+          src={service.img}
+          alt={service.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+          loading="lazy"
+        />
+      </div>
+
+      <p className="font-body text-secondary text-lg mb-6 leading-relaxed">
+        {service.desc}
+      </p>
+
+      <Link
+        to={service.path}
+        className="text-accent font-medium inline-flex items-center gap-2 transition-colors group/link hover:text-accent-hover self-start"
+      >
+        Explore{" "}
+        <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+      </Link>
+    </motion.div>
+  );
+}
+
+/* ============================================================
+   MAIN WRAPPER COMPONENT
+   ============================================================ */
 export default function ServicesOverview() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
   const services: ServiceItem[] = [
     {
       title: "Film Production",
@@ -59,58 +137,56 @@ export default function ServicesOverview() {
     },
   ];
 
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
   return (
-    <section className="py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="mb-16 md:mb-24">
-          <span className="font-mono text-accent font-bold text-sm tracking-widest uppercase block mb-4">
-            WHAT WE DO
-          </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary">
-            Four crafts. One house.
-          </h2>
+    <section 
+      ref={containerRef} 
+      className="py-24 md:py-32 bg-canvas relative" 
+      id="features"
+    >
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        {/* LEFT COLUMN: Sticky Navigation Elements */}
+        <div className="lg:col-span-5 lg:sticky lg:top-24 flex flex-col justify-between h-auto lg:h-[calc(100vh-16rem)] space-y-12">
+          <div>
+            <span className="font-mono text-accent font-bold text-sm tracking-widest uppercase block mb-4">
+              WHAT WE DO
+            </span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-primary tracking-tight mb-10 leading-[1.1]">
+              Four crafts.<br />One house.
+            </h2>
+
+            <div className="flex flex-col space-y-3 max-w-sm">
+              {services.map((service, idx) => (
+                <TrackingTab 
+                  key={`tab-${service.title}`}
+                  title={service.title}
+                  idx={idx}
+                  total={services.length}
+                  progress={scrollYProgress}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="pt-6 border-t border-border max-w-sm">
+            <p className="font-body text-secondary text-base mb-4">
+              Premium visual execution engineered around deep human narratives.
+            </p>
+          </div>
         </div>
 
-        <div className="flex flex-col gap-24 lg:gap-32">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ type: "spring", stiffness: 60, damping: 20 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center ${
-                i % 2 !== 0 ? "lg:grid-flow-col-dense" : ""
-              }`}
-            >
-              <div
-                className={`aspect-4/3 rounded-2xl overflow-hidden shadow-card border border-border relative ${
-                  i % 2 !== 0 ? "lg:col-start-2" : ""
-                }`}
-              >
-                <ParallaxImage src={service.img} alt={service.title} />
-              </div>
-
-              <div
-                className={`flex flex-col items-start ${i % 2 !== 0 ? "lg:col-start-1" : ""}`}
-              >
-                <h3 className="text-3xl font-display font-bold mb-4 text-primary">
-                  {service.title}
-                </h3>
-                <p className="font-body text-secondary text-lg mb-8">
-                  {service.desc}
-                </p>
-                <Link
-                  to={service.path}
-                  className="text-accent font-medium flex items-center gap-2 transition-colors group hover:text-accent-hover"
-                >
-                  Explore{" "}
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </motion.div>
+        {/* RIGHT COLUMN: Scrolling Cards */}
+        <div className="lg:col-span-7 flex flex-col space-y-24 lg:space-y-36 pb-[15vh]">
+          {services.map((service) => (
+            <ServiceCard key={`card-${service.title}`} service={service} />
           ))}
         </div>
+
       </div>
     </section>
   );
