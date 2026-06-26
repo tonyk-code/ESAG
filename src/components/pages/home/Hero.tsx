@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import heroVideo from "../../../../public/Hero video.mp4";
+import heroVideo from "/Hero video.mp4";
 import { RevealText } from "../../ui/RevealText";
 
 export default function Hero() {
