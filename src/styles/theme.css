@@ -1,4 +1,12 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&display=swap");
+
+/* ============================================================
+   ESSAG Film Production — Design Tokens
+   Palette: ProductionHub-inspired — white canvas, dark teal-navy
+   UI elements, warm orange-red accent. Single light theme only.
+   ============================================================ */
 
 @theme {
   /* ── Fonts ───────────────────────────────────────────── */
@@ -6,80 +14,35 @@
   --font-body:    "Outfit", sans-serif;
   --font-mono:    "JetBrains Mono", monospace;
 
-  /* ── Colors ──────────────────────────────────────────── */
-  --color-canvas:        #0d0d0f;
-  --color-surface:       #141418;
-  --color-surface-alt:   #1e1e24;
-  --color-primary:       #f4f3ef;
-  --color-secondary:     #a1a1aa;
-  --color-disabled:      #52525b;
-  --color-accent:        #c9952a;
-  --color-accent-hover:  #a37a1f;
-  --color-border:        rgba(255, 255, 255, 0.08);
-  --color-error:         #d4884a;
+  /* ── Backgrounds ─────────────────────────────────────── */
+  --color-canvas:      #ffffff;   /* pure white — main page bg     */
+  --color-surface:     #f5f5f5;   /* light gray — cards, sections  */
+  --color-surface-alt: #ebebeb;   /* slightly deeper — hover, input bg */
 
-  /* ── Shadows ─────────────────────────────────────────── */
-  --shadow-card:  0 4px 32px rgba(13, 13, 15, 0.60);
-  --shadow-focus: 0 0 0 3px rgba(201, 149, 42, 0.15);
+  /* ── Text ────────────────────────────────────────────── */
+  --color-primary:     #2d3f4b;   /* dark teal-navy — headings, main text */
+  --color-secondary:   #5a6a75;   /* muted teal-gray — body, captions     */
+  --color-disabled:    #9aa5ab;   /* light gray — placeholders, disabled  */
+
+  /* ── Accent — warm orange-red ────────────────────────── */
+  --color-accent:        #e8673c;
+  --color-accent-hover:  #d45528;
+  --color-accent-glow:   rgba(232, 103, 60, 0.12);
+  --color-accent-border: rgba(232, 103, 60, 0.30);
+
+  /* ── Structural ──────────────────────────────────────── */
+  --color-border:  rgba(45, 63, 75, 0.12);
+  --color-error:   #c0392b;
+
+  /* ── Shadows — warm, not black ───────────────────────── */
+  --shadow-card:  0 2px 16px rgba(45, 63, 75, 0.10);
+  --shadow-focus: 0 0 0 3px rgba(232, 103, 60, 0.20);
 
   /* ── Easing ──────────────────────────────────────────── */
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ============================================================
-   LIGHT MODE — overrides color tokens only
-   ============================================================ */
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-canvas:       #f7f6f2;
-    --color-surface:      #eeecea;
-    --color-surface-alt:  #e4e2de;
-    --color-primary:      #18181b;
-    --color-secondary:    #52525b;
-    --color-disabled:     #a1a1aa;
-    --color-accent:       #b07d1a;
-    --color-accent-hover: #8c6213;
-    --color-border:       rgba(0, 0, 0, 0.09);
-    --color-error:        #c0602a;
-    --shadow-card:  0 4px 24px rgba(60, 45, 20, 0.10);
-    --shadow-focus: 0 0 0 3px rgba(176, 125, 26, 0.18);
-  }
-}
-
-html.light {
-  --color-canvas:       #f7f6f2;
-  --color-surface:      #eeecea;
-  --color-surface-alt:  #e4e2de;
-  --color-primary:      #18181b;
-  --color-secondary:    #52525b;
-  --color-disabled:     #a1a1aa;
-  --color-accent:       #b07d1a;
-  --color-accent-hover: #8c6213;
-  --color-border:       rgba(0, 0, 0, 0.09);
-  --color-error:        #c0602a;
-  --shadow-card:  0 4px 24px rgba(60, 45, 20, 0.10);
-  --shadow-focus: 0 0 0 3px rgba(176, 125, 26, 0.18);
-}
-
-html.dark {
-  --color-canvas:       #0d0d0f;
-  --color-surface:      #141418;
-  --color-surface-alt:  #1e1e24;
-  --color-primary:      #f4f3ef;
-  --color-secondary:    #a1a1aa;
-  --color-disabled:     #52525b;
-  --color-accent:       #c9952a;
-  --color-accent-hover: #a37a1f;
-  --color-border:       rgba(255, 255, 255, 0.08);
-  --color-error:        #d4884a;
-  --shadow-card:  0 4px 32px rgba(13, 13, 15, 0.60);
-  --shadow-focus: 0 0 0 3px rgba(201, 149, 42, 0.15);
-}
-
-/* ============================================================
-   BASE
-   ============================================================ */
 @layer base {
   html {
     font-size: 16px;
@@ -94,27 +57,11 @@ html.dark {
     font-family: var(--font-body);
     min-height: 100dvh;
     overflow-x: hidden;
-    transition: background-color 400ms, color 400ms;
   }
-
-  /* Grain texture */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.4;
-    transition: opacity 400ms;
-  }
-
-  @media (prefers-color-scheme: light) { body::before { opacity: 0.12; } }
-  html.light body::before { opacity: 0.12; }
-  html.dark  body::before { opacity: 0.40; }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    color: var(--color-primary);
   }
 
   :focus-visible {
