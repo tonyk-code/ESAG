@@ -9,7 +9,7 @@ import TeamTeaser from "../components/pages/home/TeamTeaser";
 import ProductionServicesTrack from "../components/pages/home/ProductionServicesTrack";
 
 
-export function Home() {
+export default function Home() {
   return (
     <div className="flex flex-col w-full bg-canvas">
       <Hero />
