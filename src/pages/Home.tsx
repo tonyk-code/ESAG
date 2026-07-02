@@ -7,6 +7,7 @@ import Clients from "../components/pages/home/Clients";
 import CallToAction from "../components/pages/home/CallToAction";
 import TeamTeaser from "../components/pages/home/TeamTeaser";
 import ProductionServicesTrack from "../components/pages/home/ProductionServicesTrack";
+import AwardsStrip from "../components/pages/home/AwardsStrip";
 
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Clients />
       <Intro />
       <ServicesOverview />
+      <AwardsStrip/>
       <FeaturedWork />
       <ProductionServicesTrack />
       <TeamTeaser/>
