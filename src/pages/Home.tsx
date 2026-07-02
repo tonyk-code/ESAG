@@ -13,13 +13,13 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full bg-canvas">
       <Hero />
+      <Clients />
       <Intro />
       <ServicesOverview />
       <FeaturedWork />
       <ProductionServicesTrack />
       <TeamTeaser/>
       <Stats />
-      <Clients />
       <CallToAction />
     </div>
   );
