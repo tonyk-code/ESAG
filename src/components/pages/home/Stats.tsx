@@ -1,40 +1,90 @@
-import { motion } from "motion/react";
+import { useEffect, useRef } from "react";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  useInView,
+} from "framer-motion";
 
 interface StatItem {
-  num: string;
+  num: number;
   label: string;
+}
+
+function Counter({ value }: { value: number }) {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, value, {
+        duration: 1.6,
+        ease: [0.16, 1, 0.3, 1],
+      });
+      return controls.stop;
+    }
+  }, [count, value, isInView]);
+
+  return <motion.span ref={ref}>{rounded}</motion.span>;
 }
 
 export default function Stats() {
   const stats: StatItem[] = [
-    { num: "20", label: "Cinema Films" },
-    { num: "200", label: "Music Videos" },
-    { num: "25", label: "Years of Work" },
-    { num: "50", label: "NGO & Brand Clients" },
+    { num: 20, label: "Cinema Films" },
+    { num: 200, label: "Music Videos" },
+    { num: 25, label: "Years of Work" },
+    { num: 50, label: "NGO & Brand Clients" },
   ];
 
   return (
-    <section className="py-24 md:py-32 border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center lg:text-left">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex flex-col gap-2"
-            >
-              <div className="text-5xl md:text-6xl font-display font-bold text-primary">
-                {stat.num}
-                <span className="text-accent">+</span>
+    <section
+      className="relative w-full bg-primary py-site-margin text-white selection:bg-accent selection:text-white border-b border-border overflow-hidden"
+      aria-label="Our operational metrics"
+    >
+      <div
+        className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 pointer-events-none opacity-15 mix-blend-screen filter blur-[100px] rounded-full bg-radial from-accent to-transparent"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-(--max-width-main) mx-auto px-site-margin relative z-10">
+        <div className="mb-12 md:mb-16 text-center">
+          <span className="font-mono text-xs font-bold tracking-[0.3em] text-secondary uppercase block">
+            Our Craft —{" "}
+            <span className="text-white font-black">Years in Motion</span>
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12">
+          {stats.map((stat, i) => {
+            const isLast = i === stats.length - 1;
+
+            return (
+              <div
+                key={i}
+                className="relative w-full flex flex-col items-center justify-center text-center"
+              >
+                <div className="flex flex-col items-center gap-3">
+                  <div className="font-display text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none text-accent">
+                    <Counter value={stat.num} />+
+                  </div>
+
+                  <div className="font-body text-sm md:text-base text-secondary font-medium tracking-wide">
+                    {stat.label}
+                  </div>
+                </div>
+
+                {!isLast && (
+                  <div
+                    className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 h-12 w-px bg-border/20"
+                    aria-hidden="true"
+                  />
+                )}
               </div>
-              <div className="font-body text-secondary font-medium">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
