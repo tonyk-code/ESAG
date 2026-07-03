@@ -383,21 +383,22 @@
    3. TAILWIND V4 DESIGN TOKENS
    ============================================================ */
 @theme {
-  /* Fonts */
-  --font-display: "Cabinet Grotesk", sans-serif;
-  --font-body: "Outfit", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  /* New Premium Typography Stack */
+  --font-display: "Degular", "Sohne Schmal", -apple-system, sans-serif;
+  --font-body: "Instrument Sans", -apple-system, sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-serif: "Reckless Neue", Georgia, serif; /* For editorial/cinematic taglines */
 
   /* Backgrounds */
-  --color-canvas: #f9f9f9; /* Pure white — main page bg */
-  --color-surface: #f5f5f5; /* Light gray — cards, sections */
-  --color-surface-alt: #ebebeb; /* Slightly deeper — hover, input bg */
+  --color-canvas: #f9f9f9;
+  --color-surface: #f5f5f5;
+  --color-surface-alt: #ebebeb;
   --color-brand: var(--swatch--brand-500, #1f3552);
 
   /* Text Colors */
-  --color-primary: #0e1a2b; /* Dark teal-navy — headings, main text */
-  --color-secondary: #5a6a75; /* Muted teal-gray — body, captions */
-  --color-disabled: #9aa5ab; /* Light gray — placeholders, disabled */
+  --color-primary: #0e1a2b;
+  --color-secondary: #5a6a75;
+  --color-disabled: #9aa5ab;
 
   /* Accents — Warm Orange-Red */
   --color-accent: #e8673c;
@@ -409,7 +410,7 @@
   --color-border: rgba(45, 63, 75, 0.12);
   --color-error: #c0392b;
 
-  /* Shadows — Warm Ambient Shadows */
+  /* Shadows */
   --shadow-card: 0 2px 16px rgba(45, 63, 75, 0.1);
   --shadow-focus: 0 0 0 3px rgba(232, 103, 60, 0.2);
 
@@ -417,11 +418,11 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Map the fluid layout spaces to Tailwind spacing utilities */
+  /* Fluid Layout Mapping */
   --spacing-site-margin: var(--site--margin);
   --spacing-site-gutter: var(--site--gutter);
   
-  /* Map the fluid typography sizes to Tailwind font-size utilities */
+  /* Fluid Typography Mapping */
   --text-main: var(--_typography---font-size--text-main);
   --text-h1: var(--_typography---rich-text--h1);
   --text-h2: var(--_typography---rich-text--h2);
