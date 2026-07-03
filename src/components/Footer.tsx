@@ -2,17 +2,17 @@ import { Link } from "react-router";
 
 export function Footer() {
   return (
-    <footer className="bg-surface mt-auto border-t border-border">
-      <div className="w-full max-w-350 mx-auto px-[clamp(1.5rem,5vw,6rem)] py-16 grid grid-cols-[2fr_1fr_1fr_1fr] gap-12">
+    <footer className="bg-primary border-t border-border/40 mt-auto w-full text-white selection:bg-accent selection:text-white">
+      <div className="w-full max-w-350 mx-auto px-[clamp(1.5rem,5vw,6rem)] py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12">
         <div className="flex flex-col gap-4">
           <Link
             to="/"
-            className="font-display font-extrabold text-xl text-primary tracking-tight"
+            className="font-display font-extrabold text-xl text-white tracking-tight hover:text-accent transition-colors"
           >
             ESSAG
           </Link>
           <p className="text-sm text-secondary max-w-[32ch] leading-relaxed">
-            Creating beauty than ever before.
+            Creating beauty than ever before[cite: 1].
           </p>
           <ul className="flex gap-4 mt-2">
             {[
@@ -34,7 +34,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-mono text-[0.7rem] uppercase tracking-[0.04em] text-disabled mb-4">
+          <h4 className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-secondary/60 mb-4">
             Explore
           </h4>
           <ul className="flex flex-col gap-3">
@@ -47,7 +47,7 @@ export function Footer() {
               <li key={to}>
                 <Link
                   to={to}
-                  className="text-sm text-secondary hover:text-accent transition-colors"
+                  className="text-sm text-secondary hover:text-white transition-colors"
                 >
                   {label}
                 </Link>
@@ -57,7 +57,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-mono text-[0.7rem] uppercase tracking-[0.04em] text-disabled mb-4">
+          <h4 className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-secondary/60 mb-4">
             Services
           </h4>
           <ul className="flex flex-col gap-3">
@@ -70,7 +70,7 @@ export function Footer() {
               <li key={to}>
                 <Link
                   to={to}
-                  className="text-sm text-secondary hover:text-accent transition-colors"
+                  className="text-sm text-secondary hover:text-white transition-colors"
                 >
                   {label}
                 </Link>
@@ -80,7 +80,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-mono text-[0.7rem] uppercase tracking-[0.04em] text-disabled mb-4">
+          <h4 className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-secondary/60 mb-4">
             Get in Touch
           </h4>
           <ul className="flex flex-col gap-3">
@@ -89,7 +89,7 @@ export function Footer() {
                 href="mailto:essagfilm33@gmail.com"
                 className="text-sm text-secondary hover:text-accent transition-colors break-all"
               >
-                essagfilm33@gmail.com
+                essagfilm33@gmail.com[cite: 1]
               </a>
             </li>
             <li>
@@ -97,7 +97,7 @@ export function Footer() {
                 href="tel:+251911221602"
                 className="text-sm text-secondary hover:text-accent transition-colors"
               >
-                +251 911 221 602
+                +251 911 221 602[cite: 1]
               </a>
             </li>
             <li className="text-sm text-secondary leading-relaxed">
@@ -107,8 +107,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="w-full max-w-350 mx-auto px-[clamp(1.5rem,5vw,6rem)] border-t border-border py-6 flex items-center justify-between">
-        <p className="text-xs text-disabled">
+      <div className="w-full max-w-350 mx-auto px-[clamp(1.5rem,5vw,6rem)] border-t border-border/20 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-xs text-secondary/50">
           &copy; {new Date().getFullYear()} ESSAG Film Production. All rights
           reserved.
         </p>
