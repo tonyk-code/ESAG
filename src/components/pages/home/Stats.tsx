@@ -41,14 +41,9 @@ export default function Stats() {
 
   return (
     <section
-      className="relative w-full bg-primary py-site-margin text-white selection:bg-accent selection:text-white border-b border-border overflow-hidden"
+      className="relative w-full bg-primary py-site-margin text-white selection:bg-accent selection:text-white border-b-2 border-border/60 overflow-hidden"
       aria-label="Our operational metrics"
     >
-      <div
-        className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 pointer-events-none opacity-15 mix-blend-screen filter blur-[100px] rounded-full bg-radial from-accent to-transparent"
-        aria-hidden="true"
-      />
-
       <div className="max-w-(--max-width-main) mx-auto px-site-margin relative z-10">
         <div className="mb-12 md:mb-16 text-center">
           <span className="font-mono text-xs font-bold tracking-[0.3em] text-secondary uppercase block">
