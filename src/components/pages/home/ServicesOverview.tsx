@@ -122,7 +122,7 @@ export default function ServicesOverview() {
                 <div className="flex">
                   <Link
                     to={item.path}
-                    className="group relative inline-flex items-center justify-center overflow-hidden rounded-sm bg-accent px-6 py-3 font-mono text-xs font-bold uppercase tracking-widest text-primary transition-all duration-200 hover:scale-105 hover:text-white"
+                    className="group relative inline-flex items-center justify-center overflow-hidden bg-accent px-6 py-3 font-mono text-xs font-bold uppercase tracking-widest text-primary transition-all duration-200 hover:scale-105 hover:text-white"
                   >
                     <span className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand scale-0 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[8]" />
 

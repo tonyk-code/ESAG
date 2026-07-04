@@ -99,14 +99,14 @@ export default function Hero() {
           >
             <a
               href="/work"
-              className="group relative inline-flex items-center justify-center px-8 py-4 min-h-13 overflow-hidden rounded-sm bg-accent font-mono text-xs tracking-widest uppercase text-white transition-transform duration-300 active:scale-98"
+              className="group relative inline-flex items-center justify-center px-8 py-4 min-h-13 overflow-hidden bg-accent font-mono text-xs tracking-widest uppercase text-white transition-transform duration-300 active:scale-98"
             >
               <span className="absolute inset-0 w-full h-full bg-white/10 transition-transform duration-300 -translate-x-full group-hover:translate-x-0" />
               <span className="relative z-10 font-bold">See Our Work</span>
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 min-h-13 rounded-sm bg-surface hover:bg-surface-alt font-mono text-xs tracking-widest uppercase text-primary font-bold border border-border/80 transition-colors duration-300 active:scale-98"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-13 bg-surface hover:bg-surface-alt font-mono text-xs tracking-widest uppercase text-primary font-bold border border-border/80 transition-colors duration-300 active:scale-98"
             >
               Start a Project
             </a>

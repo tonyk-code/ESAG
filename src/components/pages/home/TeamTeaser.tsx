@@ -141,7 +141,7 @@ export default function TeamTeaser(): React.JSX.Element {
 
         <Link
           to="/contact"
-          className="px-8 py-4 bg-primary hover:bg-accent hover:text-canvas text-canvas font-mono font-bold uppercase tracking-wider text-sm transition-colors duration-300 rounded-xl shadow-md cursor-pointer"
+          className="px-8 py-4 bg-primary hover:bg-accent hover:text-canvas text-canvas font-mono font-bold uppercase tracking-wider text-sm transition-colors duration-300 shadow-md cursor-pointer"
         >
           Get in touch
         </Link>

@@ -60,7 +60,7 @@ export default function CallToAction() {
         <div className="flex">
           <Link 
             to="/contact" 
-            className="relative inline-flex items-center justify-center font-mono text-xs md:text-sm font-black tracking-widest uppercase text-white px-8 py-4 md:px-12 md:py-5 rounded-sm bg-accent overflow-hidden transition-colors duration-300 hover:text-primary group"
+            className="relative inline-flex items-center justify-center font-mono text-xs md:text-sm font-black tracking-widest uppercase text-white px-8 py-4 md:px-12 md:py-5 bg-accent overflow-hidden transition-colors duration-300 hover:text-primary group"
           >
             <span className="relative z-10">Start Production</span>
             <motion.div 
