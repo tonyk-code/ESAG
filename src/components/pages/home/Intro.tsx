@@ -1,5 +1,5 @@
-import { motion } from "motion/react";
 import { Link } from "react-router";
+import { RevealText } from "../../ui/RevealText";
 
 export default function Intro() {
   return (
@@ -12,20 +12,18 @@ export default function Intro() {
           <div className="hidden lg:block absolute top-0 left-[-5%] right-[-5%] h-px bg-white/10" />
           <div className="hidden lg:block absolute top-0 left-1/2 w-px h-full bg-white/10" />
 
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", stiffness: 60, damping: 20 }}
-            className="py-16 md:py-20 lg:py-28 flex flex-col justify-center items-start pr-0 lg:pr-16"
-          >
+          <div className="py-16 md:py-20 lg:py-28 flex flex-col justify-center items-start pr-0 lg:pr-16">
             <span className="font-mono text-accent text-lg md:text-xl font-bold tracking-widest uppercase mb-6 block">
               WHO WE ARE
             </span>
 
-            <h2 className="font-display font-black text-white text-5xl md:text-6xl lg:text-7xl uppercase leading-[0.95] tracking-tighter mb-10 whitespace-pre-line">
-              Ethiopia's{"\n"}film house.
-            </h2>
+            <RevealText
+              text={"Ethiopia's film house."}
+              tag="h2"
+              trigger="onScroll"
+              delay={0.1}
+              className="font-display font-black text-white text-5xl md:text-6xl lg:text-7xl uppercase leading-[0.95] tracking-tighter mb-10"
+            />
 
             <Link
               to="/about"
@@ -33,15 +31,9 @@ export default function Intro() {
             >
               About Us
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", stiffness: 60, damping: 20 }}
-            className="py-12 pt-12 md:py-20 lg:py-28 lg:pt-28 flex flex-col justify-center lg:pl-16 border-t border-white/10 lg:border-t-0"
-          >
+          <div className="py-12 pt-12 md:py-20 lg:py-28 lg:pt-28 flex flex-col justify-center lg:pl-16 border-t border-white/10 lg:border-t-0">
             <div className="max-w-xl">
               <p className="font-body text-white/80 text-base md:text-lg leading-relaxed whitespace-pre-line">
                 For over two decades, ESSAG has been at the forefront of
@@ -58,7 +50,7 @@ export default function Intro() {
                 cinematic storytelling.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

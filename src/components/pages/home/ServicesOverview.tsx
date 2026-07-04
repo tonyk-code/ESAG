@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { RevealText } from "../../ui/RevealText";
 
 interface ServiceItem {
   id: string;
@@ -58,9 +59,14 @@ export default function ServicesOverview() {
             </span>
           </div>
 
-          <h2 className="font-display text-4xl md:text-6xl font-black tracking-tight uppercase leading-none mb-6">
-            Capabilities
-          </h2>
+          <RevealText
+            text={"Capabilities"}
+            tag="h2"
+            trigger="onScroll"
+            delay={0.1}
+            className="font-display text-4xl md:text-6xl font-black tracking-tight uppercase leading-none mb-6"
+          />
+
           <p className="font-body text-base md:text-lg text-secondary leading-relaxed">
             We bring precision engineering and high-end cinematic vision to
             every frame — forged from a dedicated creative process to accomplish
