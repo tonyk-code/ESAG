@@ -28,31 +28,31 @@ interface ProductionServicesTrackProps {
   springDamping?: number;
 }
 
-// ─── ESSAG Content ────────────────────────────────────────────────────────────
-
 const MIXED_TRACK_DATA: SlideData[] = [
   {
     id: "why-us-intro",
     number: "00",
     type: "why-us",
     title: "WHY ESSAG",
-    tagline: "Twenty years. Fifty films. We don't just point cameras — we tell stories that last.",
-    bgUrl: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1920&auto=format&fit=crop",
+    tagline:
+      "Twenty years. Fifty films. We don't just point cameras — we tell stories that last.",
+    bgUrl:
+      "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=1920&auto=format&fit=crop",
     bgAlt: "Cinematic Ethiopian landscape at golden hour",
     pillars: [
       {
         label: "CRAFTED",
-        desc: "Every project — from a feature film to an NGO documentary — is handled with intentional framing, bespoke sound, and deep narrative purpose."
+        desc: "Every project — from a feature film to an NGO documentary — is handled with intentional framing, bespoke sound, and deep narrative purpose.",
       },
       {
         label: "LOCAL",
-        desc: "Born and built in Addis Ababa. We know this culture, this audience, and how to capture its true soul for Ethiopian and international screens."
+        desc: "Born and built in Addis Ababa. We know this culture, this audience, and how to capture its true soul for Ethiopian and international screens.",
       },
       {
         label: "BOLD",
-        desc: "WIPO Award-winning storytelling. Over 20 cinema films and 200+ music videos. We take creative risks that make stories impossible to forget."
-      }
-    ]
+        desc: "WIPO Award-winning storytelling. Over 20 cinema films and 200+ music videos. We take creative risks that make stories impossible to forget.",
+      },
+    ],
   },
   {
     id: "film-production",
@@ -60,10 +60,17 @@ const MIXED_TRACK_DATA: SlideData[] = [
     type: "service",
     title: "FILM PRODUCTION",
     tagline: "Cinema that resonates locally and translates globally.",
-    description: "From feature films and short films to branded content and cinematic commercials — ESSAG handles the entire production lifecycle. 20+ cinema films including Nisir, Honeymoon, Elzabel, and YebetSira.",
-    capabilities: ["Feature Films", "Short Films", "TV Serials", "Branded Content"],
-    bgUrl: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1920&auto=format&fit=crop",
-    bgAlt: "Film production on location"
+    description:
+      "From feature films and short films to branded content and cinematic commercials — ESSAG handles the entire production lifecycle. 20+ cinema films including Nisir, Honeymoon, Elzabel, and YebetSira.",
+    capabilities: [
+      "Feature Films",
+      "Short Films",
+      "TV Serials",
+      "Branded Content",
+    ],
+    bgUrl:
+      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1920&auto=format&fit=crop",
+    bgAlt: "Film production on location",
   },
   {
     id: "documentary",
@@ -71,10 +78,17 @@ const MIXED_TRACK_DATA: SlideData[] = [
     type: "service",
     title: "DOCUMENTARY",
     tagline: "Real stories. Told honestly. Built to last.",
-    description: "Research-led documentary production for international NGOs, government bodies, and development organizations. Multi-lingual field production across Ethiopia — working with the UN, African Union, Save the Children, and the EU.",
-    capabilities: ["NGO Documentaries", "Government Films", "Field Production", "Multi-Language"],
-    bgUrl: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1920&auto=format&fit=crop",
-    bgAlt: "Documentary filming in the field"
+    description:
+      "Research-led documentary production for international NGOs, government bodies, and development organizations. Multi-lingual field production across Ethiopia — working with the UN, African Union, Save the Children, and the EU.",
+    capabilities: [
+      "NGO Documentaries",
+      "Government Films",
+      "Field Production",
+      "Multi-Language",
+    ],
+    bgUrl:
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1920&auto=format&fit=crop",
+    bgAlt: "Documentary filming in the field",
   },
   {
     id: "music-video",
@@ -82,10 +96,17 @@ const MIXED_TRACK_DATA: SlideData[] = [
     type: "service",
     title: "MUSIC VIDEO",
     tagline: "200+ videos. Every genre. Ethiopia's biggest artists.",
-    description: "Full-service music video production — concept to final cut. We've worked with Ephrem Tamru, Tsehaye Yohannes, Tadele Gemechu, and Fikreaddis Neqatibeb. Your vision, our craft.",
-    capabilities: ["Concept Development", "Full Production", "Color Grading", "Motion Graphics"],
-    bgUrl: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1920&auto=format&fit=crop",
-    bgAlt: "Music video production set"
+    description:
+      "Full-service music video production — concept to final cut. We've worked with Ephrem Tamru, Tsehaye Yohannes, Tadele Gemechu, and Fikreaddis Neqatibeb. Your vision, our craft.",
+    capabilities: [
+      "Concept Development",
+      "Full Production",
+      "Color Grading",
+      "Motion Graphics",
+    ],
+    bgUrl:
+      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1920&auto=format&fit=crop",
+    bgAlt: "Music video production set",
   },
   {
     id: "tv-commercials",
@@ -93,14 +114,19 @@ const MIXED_TRACK_DATA: SlideData[] = [
     type: "service",
     title: "TV & COMMERCIALS",
     tagline: "On screen. On air. On brand.",
-    description: "TV serials, radio spots, and commercial campaigns for universities, banks, hotels, and private brands. Currently airing Bete ESSAG on Ahadu TV every Sunday.",
-    capabilities: ["TV Serials", "TV & Radio Ads", "Corporate Campaigns", "Photography"],
-    bgUrl: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1920&auto=format&fit=crop",
-    bgAlt: "TV commercial production"
-  }
+    description:
+      "TV serials, radio spots, and commercial campaigns for universities, banks, hotels, and private brands. Currently airing Bete ESSAG on Ahadu TV every Sunday.",
+    capabilities: [
+      "TV Serials",
+      "TV & Radio Ads",
+      "Corporate Campaigns",
+      "Photography",
+    ],
+    bgUrl:
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1920&auto=format&fit=crop",
+    bgAlt: "TV commercial production",
+  },
 ];
-
-// ─── Main Component ───────────────────────────────────────────────────────────
 
 export default function ProductionServicesTrack({
   springStiffness = 75,
@@ -116,7 +142,10 @@ export default function ProductionServicesTrack({
   }, [slideCount]);
 
   const rawX = useMotionValue(0);
-  const smoothX = useSpring(rawX, { stiffness: springStiffness, damping: springDamping });
+  const smoothX = useSpring(rawX, {
+    stiffness: springStiffness,
+    damping: springDamping,
+  });
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
@@ -143,9 +172,12 @@ export default function ProductionServicesTrack({
   const totalHeight = `calc(100vh + ${slideCount - 1} * 100vh)`;
 
   return (
-    <div ref={containerRef} style={{ height: totalHeight }} className="relative z-10">
+    <div
+      ref={containerRef}
+      style={{ height: totalHeight }}
+      className="relative z-10"
+    >
       <div ref={stickyRef} className="sticky top-0 h-screen overflow-hidden">
-
         <motion.div
           className="flex h-full"
           style={{ x: smoothX, width: `${slideCount * 100}%` }}
@@ -163,10 +195,7 @@ export default function ProductionServicesTrack({
                 role="img"
                 aria-label={slide.bgAlt}
               />
-
-              {/* FIX: Dark overlay — not canvas/white. Deep navy-black gradient
-                  so content always reads clearly on any background image. */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0e1a2b]/95 via-[#0e1a2b]/80 to-[#0e1a2b]/70 lg:from-[#0e1a2b]/90 lg:via-[#0e1a2b]/70 lg:to-[#0e1a2b]/50" />
+              <div className="absolute inset-0 bg-linear-to-r from-primary/95 via-primary/80 to-primary/70 lg:from-primary/90 lg:via-primary/70 lg:to-primary/50" />
 
               {slide.type === "why-us" ? (
                 <WhyUsSlideLayout slide={slide} />
@@ -184,8 +213,6 @@ export default function ProductionServicesTrack({
   );
 }
 
-// ─── Why Us Slide ─────────────────────────────────────────────────────────────
-
 function WhyUsSlideLayout({ slide }: { slide: WhyUsSlide }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 items-center h-full w-full px-6 md:px-16 lg:px-24 xl:px-32 py-24 relative z-10 select-none">
@@ -193,12 +220,16 @@ function WhyUsSlideLayout({ slide }: { slide: WhyUsSlide }) {
         <span className="font-mono text-xs tracking-[0.4em] text-accent block mb-4 uppercase">
           Est. 2000 · Addis Ababa
         </span>
-        <h2 className="font-display text-5xl md:text-7xl font-black tracking-tight uppercase leading-none mb-6"
-          style={{ color: "#ffffff" }}>
+        <h2
+          className="font-display text-5xl md:text-7xl font-black tracking-tight uppercase leading-none mb-6"
+          style={{ color: "#ffffff" }}
+        >
           {slide.title}
         </h2>
-        <p className="font-body text-base md:text-lg leading-relaxed max-w-sm"
-          style={{ color: "rgba(255,255,255,0.7)" }}>
+        <p
+          className="font-body text-base md:text-lg leading-relaxed max-w-sm"
+          style={{ color: "rgba(255,255,255,0.7)" }}
+        >
           {slide.tagline}
         </p>
       </div>
@@ -207,25 +238,27 @@ function WhyUsSlideLayout({ slide }: { slide: WhyUsSlide }) {
         {slide.pillars.map((pillar, i) => (
           <div
             key={pillar.label}
-            // FIX: Dark card surface instead of light surface/60
-            // rgba(255,255,255,0.06) = barely visible on dark bg, readable
             className="p-6 backdrop-blur-md border rounded-sm hover:border-accent transition-colors duration-300"
             style={{
               backgroundColor: "rgba(255,255,255,0.06)",
-              borderColor: "rgba(255,255,255,0.12)"
+              borderColor: "rgba(255,255,255,0.12)",
             }}
           >
             <div className="flex items-center gap-4 mb-2">
               <span className="font-mono text-xs text-accent font-bold">
                 0{i + 1}.
               </span>
-              <h4 className="font-display text-xl font-black tracking-wide uppercase"
-                style={{ color: "#ffffff" }}>
+              <h4
+                className="font-display text-xl font-black tracking-wide uppercase"
+                style={{ color: "#ffffff" }}
+              >
                 {pillar.label}
               </h4>
             </div>
-            <p className="font-body text-xs md:text-sm leading-relaxed pl-7"
-              style={{ color: "rgba(255,255,255,0.6)" }}>
+            <p
+              className="font-body text-xs md:text-sm leading-relaxed pl-7"
+              style={{ color: "rgba(255,255,255,0.6)" }}
+            >
               {pillar.desc}
             </p>
           </div>
@@ -235,12 +268,10 @@ function WhyUsSlideLayout({ slide }: { slide: WhyUsSlide }) {
   );
 }
 
-// ─── Service Slides ───────────────────────────────────────────────────────────
-
 function ServiceSlideLayout({ service }: { service: ServiceSlide }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 items-center h-full w-full px-6 md:px-16 lg:px-24 xl:px-32 py-24 relative z-10 select-none">
-      <div className="lg:col-span-8 flex flex-col justify-between h-full max-h-[460px]">
+      <div className="lg:col-span-8 flex flex-col justify-between h-full max-h-115">
         <div>
           <span className="font-mono text-xs tracking-[0.4em] text-accent block mb-4 uppercase">
             Service {service.number}
@@ -273,7 +304,7 @@ function ServiceSlideLayout({ service }: { service: ServiceSlide }) {
               style={{
                 backgroundColor: "rgba(255,255,255,0.08)",
                 border: "1px solid rgba(255,255,255,0.15)",
-                color: "rgba(255,255,255,0.7)"
+                color: "rgba(255,255,255,0.7)",
               }}
             >
               • {item}
@@ -285,9 +316,13 @@ function ServiceSlideLayout({ service }: { service: ServiceSlide }) {
   );
 }
 
-// ─── Progress Indicator ───────────────────────────────────────────────────────
-
-function ProgressIndicator({ total, current }: { total: number; current: number }) {
+function ProgressIndicator({
+  total,
+  current,
+}: {
+  total: number;
+  current: number;
+}) {
   return (
     <div className="flex gap-3 items-center absolute bottom-10 left-6 md:left-16 lg:left-24 xl:left-32 z-20">
       {Array.from({ length: total }).map((_, i) => (
@@ -296,9 +331,8 @@ function ProgressIndicator({ total, current }: { total: number; current: number 
           className="h-1 rounded-full"
           animate={{
             width: i === current ? 44 : 10,
-            backgroundColor: i === current
-              ? "var(--color-accent)"
-              : "rgba(255,255,255,0.25)",
+            backgroundColor:
+              i === current ? "var(--color-accent)" : "rgba(255,255,255,0.25)",
             opacity: i === current ? 1 : 0.5,
           }}
           transition={{ type: "spring", stiffness: 260, damping: 22 }}
@@ -308,8 +342,6 @@ function ProgressIndicator({ total, current }: { total: number; current: number 
   );
 }
 
-// ─── Scroll Hint ──────────────────────────────────────────────────────────────
-
 function ScrollHint({ visible }: { visible: boolean }) {
   return (
     <motion.div
@@ -317,12 +349,16 @@ function ScrollHint({ visible }: { visible: boolean }) {
       animate={{ opacity: visible ? 1 : 0, y: visible ? 0 : 20 }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
     >
-      <span className="text-[10px] font-mono tracking-[0.3em] uppercase"
-        style={{ color: "rgba(255,255,255,0.5)" }}>
+      <span
+        className="text-[10px] font-mono tracking-[0.3em] uppercase"
+        style={{ color: "rgba(255,255,255,0.5)" }}
+      >
         Scroll to explore
       </span>
-      <div className="w-16 h-px relative overflow-hidden"
-        style={{ backgroundColor: "rgba(255,255,255,0.2)" }}>
+      <div
+        className="w-16 h-px relative overflow-hidden"
+        style={{ backgroundColor: "rgba(255,255,255,0.2)" }}
+      >
         <motion.div
           className="absolute inset-y-0 left-0 w-1/2 bg-accent"
           animate={{ x: ["-100%", "200%"] }}
