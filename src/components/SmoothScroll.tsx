@@ -14,10 +14,6 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
-    lenis.on("scroll", () => {
-      window.dispatchEvent(new Event("scroll"));
-    });
     
     requestAnimationFrame(raf);
 
