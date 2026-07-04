@@ -107,9 +107,13 @@ export default function ServicesOverview() {
                   isEven ? "lg:order-2 lg:pl-12" : "lg:order-1 lg:pr-12"
                 }`}
               >
-                <h3 className="font-display text-2xl md:text-6xl font-bold text-primary tracking-tight uppercase mb-4">
-                  {item.title}
-                </h3>
+                <RevealText
+                  text={item.title}
+                  tag="h3"
+                  trigger="onScroll"
+                  delay={index * 0.08}
+                  className="font-display text-2xl md:text-6xl font-bold text-primary tracking-tight uppercase mb-4"
+                />
 
                 <p className="font-body text-sm md:text-base text-secondary leading-relaxed mb-8">
                   {item.description}
