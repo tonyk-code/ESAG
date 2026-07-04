@@ -52,68 +52,66 @@ const MARQUEE_ITEMS = [
 export default function Hero() {
   return (
     <section className="min-h-dvh w-full relative overflow-hidden flex flex-col justify-center select-none bg-canvas text-primary">
-     
       <div className="relative z-10 w-full max-w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-site-gutter items-center px-site-margin py-20 lg:py-0">
         <motion.div className="lg:col-span-6 flex flex-col text-left items-start z-20">
-  {/* Eyebrow Label with modern tracking and indicator crosshair */}
-  <motion.div
-    initial={{ opacity: 0, x: -10 }}
-    animate={{ opacity: 1, x: 0 }}
-    transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-    className="flex items-center gap-2 mb-6"
-  >
-    <span className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
-    <p className="font-mono text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent font-medium">
-      Film · Documentary · Music Video · Television
-    </p>
-  </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-2 mb-6"
+          >
+            <div className="flex items-center gap-4">
+              <div className="h-px w-12 bg-accent" />
 
-  {/* Amplified Display Headline */}
-  <div className="relative max-w-2xl">
-    <RevealText
-      text="Creating beauty like *never* before"
-      tag="h1"
-      trigger="onLoad"
-      delay={0.2}
-      className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-left font-display font-black uppercase leading-[0.95]"
-      style={{ color: "var(--color-primary)" }}
-    />
-  </div>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-secondary">
+                20+ Years of Cinematic Storytelling
+              </span>
+            </div>
+          </motion.div>
 
-  {/* Refined Secondary Text Block */}
-  <motion.p
-    initial={{ opacity: 0, y: 15 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.55, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-    className="mt-8 text-sm md:text-base lg:text-lg text-secondary font-body font-normal max-w-xl leading-relaxed opacity-90"
-  >
-    Ethiopia's leading film and documentary production house. Over two
-    decades of cinema, music videos, and NGO stories — crafted from
-    Addis Ababa to the world.
-  </motion.p>
+          <div className="relative max-w-2xl">
+            <RevealText
+              text="Creating beauty like *never* before"
+              tag="h1"
+              trigger="onLoad"
+              delay={0.2}
+              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-left font-display font-black uppercase leading-[0.95]"
+              style={{ color: "var(--color-primary)" }}
+            />
+          </div>
 
-  {/* Premium Action Triggers */}
-  <motion.div
-    initial={{ opacity: 0, y: 15 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.75, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-    className="mt-10 flex items-center gap-4 flex-wrap w-full sm:w-auto"
-  >
-    <a
-      href="/work"
-      className="group relative inline-flex items-center justify-center px-8 py-4 min-h-13 overflow-hidden rounded-sm bg-accent font-mono text-xs tracking-widest uppercase text-white transition-transform duration-300 active:scale-98"
-    >
-      <span className="absolute inset-0 w-full h-full bg-white/10 transition-transform duration-300 -translate-x-full group-hover:translate-x-0" />
-      <span className="relative z-10 font-bold">See Our Work</span>
-    </a>
-    <a
-      href="/contact"
-      className="inline-flex items-center justify-center px-8 py-4 min-h-13 rounded-sm bg-surface hover:bg-surface-alt font-mono text-xs tracking-widest uppercase text-primary font-bold border border-border/80 transition-colors duration-300 active:scale-98"
-    >
-      Start a Project
-    </a>
-  </motion.div>
-</motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-8 text-sm md:text-base lg:text-lg text-secondary font-body font-normal max-w-xl leading-relaxed opacity-90"
+          >
+            Ethiopia's leading film and documentary production house. Over two
+            decades of cinema, music videos, and NGO stories — crafted from
+            Addis Ababa to the world.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.75, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-10 flex items-center gap-4 flex-wrap w-full sm:w-auto"
+          >
+            <a
+              href="/work"
+              className="group relative inline-flex items-center justify-center px-8 py-4 min-h-13 overflow-hidden rounded-sm bg-accent font-mono text-xs tracking-widest uppercase text-white transition-transform duration-300 active:scale-98"
+            >
+              <span className="absolute inset-0 w-full h-full bg-white/10 transition-transform duration-300 -translate-x-full group-hover:translate-x-0" />
+              <span className="relative z-10 font-bold">See Our Work</span>
+            </a>
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-13 rounded-sm bg-surface hover:bg-surface-alt font-mono text-xs tracking-widest uppercase text-primary font-bold border border-border/80 transition-colors duration-300 active:scale-98"
+            >
+              Start a Project
+            </a>
+          </motion.div>
+        </motion.div>
 
         <motion.div className="lg:col-span-6 flex items-center justify-center relative w-full h-125 md:h-162.5 lg:h-187.5">
           <div className="absolute inset-0 z-10 pointer-events-none " />
