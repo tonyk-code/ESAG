@@ -5,82 +5,82 @@ const team = [
   {
     name: "Essayas Gizaw",
     role: "Managing Director, Screenwriter & Director",
-    img: "https://picsum.photos/seed/team1/400/400",
+    img: "https://images.unsplash.com/photo-1659128103048-e41477d734a5?q=80&w=697&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Essayas Ahimed",
     role: "Journalist & Narrator",
-    img: "https://picsum.photos/seed/team2/400/400",
+    img: "https://images.unsplash.com/photo-1652471943570-f3590a4e52ed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
   },
   {
     name: "Ejigayehu G/Yes",
     role: "Film Editor",
-    img: "https://picsum.photos/seed/team3/400/400",
+    img: "https://images.unsplash.com/photo-1718392372879-950be2bfe52c?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDc3fHx8ZW58MHx8fHx8",
   },
   {
     name: "Wubshet Adugna",
     role: "Editor & Graphics Designer",
-    img: "https://picsum.photos/seed/team4/400/400",
+    img: "https://images.unsplash.com/photo-1579038773867-044c48829161?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI2fHx8ZW58MHx8fHx8",
   },
   {
     name: "Zenawork Kassahun",
     role: "Cinematographer",
-    img: "https://picsum.photos/seed/team5/400/400",
+    img: "https://images.unsplash.com/photo-1665534056605-86a9524ffba7?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ1fHx8ZW58MHx8fHx8",
   },
   {
     name: "Habitamu Beyene",
     role: "Sound Engineer",
-    img: "https://picsum.photos/seed/team6/400/400",
+    img: "https://images.unsplash.com/photo-1713819487323-6f12b2b63b9c?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDU4fHx8ZW58MHx8fHx8",
   },
   {
     name: "Fanuel Metasebiya",
     role: "Cameraman",
-    img: "https://picsum.photos/seed/team7/400/400",
+    img: "https://images.unsplash.com/photo-1749365820081-43a01a341356?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDk3fHx8ZW58MHx8fHx8",
   },
   {
     name: "Mered Tilahun",
     role: "Executive Producer",
-    img: "https://picsum.photos/seed/team8/400/400",
+    img: "https://images.unsplash.com/photo-1623813030497-61508d0e0e52?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwM3x8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Selamawit Assefa",
     role: "Production Designer",
-    img: "https://picsum.photos/seed/team9/400/400",
+    img: "https://images.unsplash.com/photo-1600273759837-a4d4abb62142?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
   },
   {
     name: "Yohannes Hailu",
     role: "Colorist & DIT",
-    img: "https://picsum.photos/seed/team10/400/400",
+    img: "https://images.unsplash.com/photo-1683609553620-d85c01bc2ba5?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIxM3x8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Tsion Kebede",
     role: "Assistant Director",
-    img: "https://picsum.photos/seed/team11/400/400",
+    img: "https://images.unsplash.com/photo-1602442787305-decbd65be507?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8",
   },
   {
     name: "Abraham Bekele",
     role: "Lighting Technician / Gaffer",
-    img: "https://picsum.photos/seed/team12/400/400",
+    img: "https://images.unsplash.com/photo-1764545973653-94c40d993495?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI1NXx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Beti Solomon",
     role: "Costume & Wardrobe",
-    img: "https://picsum.photos/seed/team13/400/400",
+    img: "https://images.unsplash.com/photo-1585798289433-8daa3749619e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIzfHx8ZW58MHx8fHx8",
   },
   {
     name: "Dawit Mengistu",
     role: "Production Manager",
-    img: "https://picsum.photos/seed/team14/400/400",
+    img: "https://images.unsplash.com/photo-1735762020031-d58bff794938?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI3M3x8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Hanna Mekonnen",
     role: "Makeup Artist",
-    img: "https://picsum.photos/seed/team15/400/400",
+    img: "https://images.unsplash.com/photo-1726654368654-52c5033b1239?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDYyfHx8ZW58MHx8fHx8",
   },
   {
     name: "Tamirat Alemu",
     role: "Boom Operator",
-    img: "https://picsum.photos/seed/team16/400/400",
+    img: "https://images.unsplash.com/photo-1565691084171-2c9d79a29009?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDM1NXx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -119,7 +119,7 @@ export default function AboutTeam() {
                 ease: [0.215, 0.61, 0.355, 1.0],
                 delay: (i % 4) * 0.15,
               }}
-              className="flex flex-col items-center text-center cursor-pointer h-150 group"
+              className="flex flex-col items-center text-center h-150 group"
             >
               <div
                 className={`w-full h-100 overflow-hidden mb-6 transition-colors duration-300 shadow-card mt-0 ${desktopMargins[i % 4]}`}
@@ -127,7 +127,7 @@ export default function AboutTeam() {
                 <img
                   src={member.img}
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale opacity-80 transition-all duration-500 ease-spring group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
+                  className="w-full h-full object-cover grayscale-40"
                 />
               </div>
               <h3 className="text-md font-display font-bold mb-2 text-primary">
