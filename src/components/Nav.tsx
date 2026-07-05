@@ -1,25 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router";
-import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const serviceLinks = [
     { name: "Film Production", path: "/services/film" },
@@ -35,29 +21,6 @@ export default function Nav() {
 
   return (
     <header className="sticky top-0 z-50 bg-canvas border-b border-border shadow-card">
-      {/* Top Banner Info Bar */}
-      <div
-        className={`w-full border-b text-secondary/80 text-xs font-mono transition-all duration-200 overflow-hidden ${
-          isScrolled
-            ? "h-0 border-none opacity-0"
-            : "h-9 opacity-100 border-border"
-        }`}
-      >
-        <div className="w-full h-full flex items-center justify-end gap-site-gutter px-site-margin">
-          <a
-            href="tel:+251911000000"
-            className="flex items-center gap-1.5 hover:text-accent transition-colors"
-          >
-            <Phone className="w-3 h-3 text-accent" />
-            <span>+251 911 000 000</span>
-          </a>
-          <span className="text-border">|</span>
-          <span className="hidden sm:inline tracking-wider">
-            ADDIS ABABA, ETHIOPIA
-          </span>
-        </div>
-      </div>
-
       <div className="w-full h-15 flex items-center justify-between px-site-margin">
         <Link
           to="/"
