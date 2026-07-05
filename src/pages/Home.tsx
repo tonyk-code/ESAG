@@ -4,7 +4,6 @@ import ServicesOverview from "../components/pages/home/ServicesOverview";
 import FeaturedWork from "../components/pages/home/FeaturedWork";
 import Stats from "../components/pages/home/Stats";
 import Clients from "../components/pages/home/Clients";
-import CallToAction from "../components/pages/home/CallToAction";
 import TeamTeaser from "../components/pages/home/TeamTeaser";
 import ProductionServicesTrack from "../components/pages/home/ProductionServicesTrack";
 import AwardsStrip from "../components/pages/home/AwardsStrip";
@@ -22,7 +21,6 @@ export default function Home() {
       <ProductionServicesTrack />
       <TeamTeaser/>
       <Stats />
-      <CallToAction />
     </div>
   );
 }
