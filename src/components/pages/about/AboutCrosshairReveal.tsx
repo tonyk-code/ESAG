@@ -36,27 +36,27 @@ export default function AboutCrosshairReveal() {
     <section ref={revealContainerRef} className="relative h-[320vh] bg-black">
       <div className="sticky top-0 left-0 h-screen w-full overflow-hidden">
         <motion.img
-          src="https://images.unsplash.com/photo-1759142016096-a9d1a5ebcc09?q=80&w=978&auto=format&fit=crop"
+          src="g1.png"
           alt="Base View"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover grayscale-50"
           style={{ scale: firstImageScale }}
         />
 
         <div className="absolute inset-0 z-10 pointer-events-none">
           <motion.div
-            className="absolute top-1/2 left-0 h-px bg-white/80 -translate-y-1/2"
+            className="absolute top-1/2 left-0 h-0.5 bg-white/80 -translate-y-1/2"
             style={{ width: lineWidthHeight }}
           />
           <motion.div
-            className="absolute top-1/2 right-0 h-px bg-white/80 -translate-y-1/2"
+            className="absolute top-1/2 right-0 h-0.5 bg-white/80 -translate-y-1/2"
             style={{ width: lineWidthHeight }}
           />
           <motion.div
-            className="absolute left-1/2 top-0 w-px bg-white/80 -translate-x-1/2"
+            className="absolute left-1/2 top-0 w-0.5 bg-white/80 -translate-x-1/2"
             style={{ height: lineWidthHeight }}
           />
           <motion.div
-            className="absolute left-1/2 bottom-0 w-px bg-white/80 -translate-x-1/2"
+            className="absolute left-1/2 bottom-0 w-0.5 bg-white/80 -translate-x-1/2"
             style={{ height: lineWidthHeight }}
           />
         </div>
@@ -66,7 +66,7 @@ export default function AboutCrosshairReveal() {
           style={{ clipPath: rectClipPath }}
         >
           <motion.img
-            src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1000&auto=format&fit=crop"
+            src="g2.png"
             alt="Revealed Canvas"
             className="w-full h-full object-cover"
             style={{ scale: secondImageScale }}

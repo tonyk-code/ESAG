@@ -14,25 +14,27 @@ export default function AboutHero() {
 
   return (
     <section
-      className="h-screen max-w-7xl mx-auto w-full relative overflow-hidden"
+      className="h-screen w-full relative overflow-hidden"
       ref={containerRef}
     >
       <motion.img
-        src="https://images.unsplash.com/photo-1759142016096-a9d1a5ebcc09?q=80&w=978&auto=format&fit=crop"
+        src="g3.png"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ y: yImage }}
         alt="Hero background"
       />
 
-      {/* FIXED PLACEMENT: Flexbox handles the vertical centering, max-w handles the wrap */}
-      <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-8">
-        <motion.div style={{ y: yParallel }} className="max-w-4xl">
+      <div className="absolute inset-0 max-w-7xl mx-auto flex flex-col justify-center px-4 md:px-8">
+        <motion.div
+          style={{ y: yParallel }}
+          className="max-w-2xl absolute top-40"
+        >
           <RevealText
             text="Architects, designers, engineers --- a team built on ideas and precision"
             tag="h1"
             trigger="onLoad"
             delay={0.2}
-            className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-left font-display font-black uppercase leading-[0.95] z-10"
+            className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-tight text-left font-display font-black uppercase leading-[0.95] z-10"
           />
         </motion.div>
       </div>
